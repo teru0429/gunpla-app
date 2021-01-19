@@ -1,5 +1,5 @@
 <div class="card">
-  <%= link_to image_tag(tweet.image, class: :card__img), "#" %>
+  <%= link_to image_tag(tweet.image, class: :card__img), tweet_path(tweet.id) %>
   <div class="card__body">
     <%= link_to tweet.title, "#", class: :card__title %>
     <%= link_to "by #{tweet.user.nickname}", "#", class: :card__user %>
