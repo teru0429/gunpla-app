@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :select_tweet, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @tweets = Tweet.all
@@ -47,5 +49,11 @@ class TweetsController < ApplicationController
 
   def select_tweet
     @tweet = Tweet.find(params[:id])
+  end
+
+  def move_to_index
+    if prototype.user_id != current_user.id
+      redirect_to action: :index
+    end
   end
 end
