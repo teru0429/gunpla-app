@@ -1,9 +1,11 @@
 <%= render "shared/header" %>
-<div class='main'>
-
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
-  <div class='title-contents'>
-    
+<main class="main">
+  <div class="inner">
+    <%# ログインしているときは以下を表示する %>
+    <%# // ログインしているときは上記を表示する %>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: "tweets/tweet", collection: @tweets %>
+    </div>
   </div>
-</div>
-  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+</main>

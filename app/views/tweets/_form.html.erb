@@ -1,0 +1,28 @@
+<%= form_with model: tweet, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :image, "メイン写真" %><br />
+    <%= f.file_field :image, direct_upload: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, placeholder: 'type a message' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text, "テキスト" %><br />
+    <%= f.text_area :text, class: :form__text %>
+  </div>
+  
+  <%# <div class="weight-bold-text">
+    カテゴリー
+    <span class="indispensable">必須</span>
+  </div>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> %>
+  
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div> 
+<% end %>
+
