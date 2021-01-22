@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    @tweets = Tweet.order("created_at DESC")
+    @tweets = Tweet.all
   end
 
   def new
@@ -44,7 +44,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:title, :text, :text1, :text2, :text3, :text4, :text5, :text6, images: [] ).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:title, :text, :text1, :text2, :text3, :text4, :text5, :text6, :image).merge(user_id: current_user.id)
   end
 
   def select_tweet
@@ -52,7 +52,7 @@ class TweetsController < ApplicationController
   end
 
   def move_to_index
-    if @tweet.user_id != current_user.id
+    if prototype.user_id != current_user.id
       redirect_to action: :index
     end
   end
