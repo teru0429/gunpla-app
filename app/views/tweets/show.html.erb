@@ -5,25 +5,124 @@
         <%= @tweet.title %>
       </p>
       <%= link_to "by #{@tweet.user.nickname}",user_path(@tweet.user.id), class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <%# 画像の投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @tweet.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
           <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <%# // 画像の投稿者とログインしているユーザーが同じであれば上記を表示する %>
+
+      <%# ↓↓1枚目の写真とテキスト項目↓↓ %>
       <div class="prototype__image">
-        <%= image_tag @tweet.image %>
+        <div class="prototype__image">
+          <% if @tweet.images.count > 0 %>
+            <%= image_tag @tweet.images.first, class: :card__img %>
+          <% end %>
+        </div>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title">テキスト</p>
           <p class="detail__message">
-            <%= @tweet.text%>
+            <%= @tweet.text %>
           </p>
         </div>
       </div>
+      <%# ↑↑1枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓2枚目の写真とテキスト項目↓↓ %>
+      <div class="prototype__image">
+        <% if @tweet.images.count > 1 %>
+          <%= image_tag @tweet.images.second, class: :card__img %>
+        <% end %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__message">
+            <%= @tweet.text1 %>
+          </p>
+        </div>
+      </div>
+      <%# ↑↑2枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓3枚目の写真とテキスト項目↓↓ %>
+      <div class="prototype__image">
+        <% if @tweet.images.count > 2 %>
+          <%= image_tag @tweet.images.third, class: :card__img %>
+        <% end %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__message">
+            <%= @tweet.text2 %>
+          </p>
+        </div>
+      </div>
+      <%# ↑↑3枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓4枚目の写真とテキスト項目↓↓ %>
+      <div class="prototype__image">
+        <% if @tweet.images.count > 3 %>
+          <%= image_tag @tweet.images.fourth, class: :card__img %>
+        <% end %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__message">
+            <%= @tweet.text3 %>
+          </p>
+        </div>
+      </div>
+      <%# ↑↑4枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓5枚目の写真とテキスト項目↓↓ %>
+      <div class="prototype__image">
+        <% if @tweet.images.count > 4 %>
+          <%= image_tag @tweet.images.fifth, class: :card__img %>
+        <% end %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__message">
+            <%= @tweet.text4 %>
+          </p>
+        </div>
+      </div>
+      <%# ↑↑5枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓６枚目の写真とテキスト項目↓↓ %>
+      <div class="prototype__image">
+        <% if @tweet.images.count > 5 %>
+          <%= image_tag @tweet.images.sixth, class: :card__img %>
+        <% end %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__message">
+            <%= @tweet.text5 %>
+          </p>
+        </div>
+      </div>
+      <%# ↑↑６枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓7枚目の写真とテキスト項目↓↓ %>
+      <div class="prototype__image">
+        <% if @tweet.images.count > 6 %>
+          <%= image_tag @tweet.images.seventh, class: :card__img %>
+        <% end %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__message">
+            <%= @tweet.text6 %>
+          </p>
+        </div>
+      </div>
+      <%# ↑↑7枚目の写真とテキスト項目↑↑ %>
+
+      <%# ↓↓コメント一覧↓↓ %>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
@@ -38,17 +137,19 @@
           <% end %>
         <% end %>
         <%# // ログインしているユーザーには上記を表示する %>
+        
+        <%# 投稿に紐づくコメントを一覧する処理の記述 %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.text %>
               <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
             </li>
           <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
+        <%# // 投稿に紐づくコメントを一覧する処理の記述 %>
       </div>
+      <%# ↑↑コメント一覧↑↑ %>
     </div>
   </div>
 </main>
