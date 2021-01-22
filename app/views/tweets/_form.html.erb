@@ -63,28 +63,6 @@
   </div>
   <%# ↑↑5枚目の写真とテキスト項目↑↑ %>
 
-  <%# ↓↓６枚目の写真とテキスト項目↓↓ %>
-  <div class="field">
-    <%= f.label :image, "メイン写真" %><br />
-    <%= f.file_field :images, name: 'tweet[images][]', direct_upload: true %>
-  </div>
-  <div class="field">
-    <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text5, class: :form__text %>
-  </div>
-  <%# ↑↑６枚目の写真とテキスト項目↑↑ %>
-
-  <%# ↓↓7枚目の写真とテキスト項目↓↓ %>
-  <div class="field">
-    <%= f.label :image, "メイン写真" %><br />
-    <%= f.file_field :images, name: 'tweet[images][]', direct_upload: true %>
-  </div>
-  <div class="field">
-    <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text6, class: :form__text %>
-  </div>
-  <%# ↑↑7枚目の写真とテキスト項目↑↑ %>
-
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div> 

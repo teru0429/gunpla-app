@@ -92,36 +92,7 @@
       </div>
       <%# ↑↑5枚目の写真とテキスト項目↑↑ %>
 
-      <%# ↓↓６枚目の写真とテキスト項目↓↓ %>
-      <div class="prototype__image">
-        <% if @tweet.images.count > 5 %>
-          <%= image_tag @tweet.images.sixth, class: :card__img %>
-        <% end %>
-      </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__message">
-            <%= @tweet.text5 %>
-          </p>
-        </div>
-      </div>
-      <%# ↑↑６枚目の写真とテキスト項目↑↑ %>
-
-      <%# ↓↓7枚目の写真とテキスト項目↓↓ %>
-      <div class="prototype__image">
-        <% if @tweet.images.count > 6 %>
-          <%= image_tag @tweet.images.seventh, class: :card__img %>
-        <% end %>
-      </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__message">
-            <%= @tweet.text6 %>
-          </p>
-        </div>
-      </div>
-      <%# ↑↑7枚目の写真とテキスト項目↑↑ %>
-
+      
       <%# ↓↓コメント一覧↓↓ %>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
