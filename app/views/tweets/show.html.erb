@@ -1,6 +1,8 @@
+<%= render "shared/header" %>
+
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
+    <div class="tweet__wrapper">
       <p class="prototype__hedding">
         <%= @tweet.title %>
       </p>
@@ -8,23 +10,20 @@
       <%# 画像の投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @tweet.user_id %>
         <div class="prototype__manage">
-          <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
-          <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :prototype__btn %>
+          <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :tweet__btn %>
+          <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :tweet__btn %>
         </div>
       <% end %>
       <%# // 画像の投稿者とログインしているユーザーが同じであれば上記を表示する %>
 
       <%# ↓↓1枚目の写真とテキスト項目↓↓ %>
       <div class="prototype__image">
-        <div class="prototype__image">
-          <% if @tweet.images.count > 0 %>
-            <%= image_tag @tweet.images.first, class: :card__img %>
-          <% end %>
-        </div>
+        <% if @tweet.images.count > 0 %>
+          <%= image_tag @tweet.images.first %>
+        <% end %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">テキスト</p>
           <p class="detail__message">
             <%= @tweet.text %>
           </p>
@@ -35,7 +34,7 @@
       <%# ↓↓2枚目の写真とテキスト項目↓↓ %>
       <div class="prototype__image">
         <% if @tweet.images.count > 1 %>
-          <%= image_tag @tweet.images.second, class: :card__img %>
+          <%= image_tag @tweet.images.second %>
         <% end %>
       </div>
       <div class="prototype__body">
@@ -50,7 +49,7 @@
       <%# ↓↓3枚目の写真とテキスト項目↓↓ %>
       <div class="prototype__image">
         <% if @tweet.images.count > 2 %>
-          <%= image_tag @tweet.images.third, class: :card__img %>
+          <%= image_tag @tweet.images.third %>
         <% end %>
       </div>
       <div class="prototype__body">
@@ -65,7 +64,7 @@
       <%# ↓↓4枚目の写真とテキスト項目↓↓ %>
       <div class="prototype__image">
         <% if @tweet.images.count > 3 %>
-          <%= image_tag @tweet.images.fourth, class: :card__img %>
+          <%= image_tag @tweet.images.fourth %>
         <% end %>
       </div>
       <div class="prototype__body">
@@ -80,7 +79,7 @@
       <%# ↓↓5枚目の写真とテキスト項目↓↓ %>
       <div class="prototype__image">
         <% if @tweet.images.count > 4 %>
-          <%= image_tag @tweet.images.fifth, class: :card__img %>
+          <%= image_tag @tweet.images.fifth %>
         <% end %>
       </div>
       <div class="prototype__body">
@@ -92,9 +91,19 @@
       </div>
       <%# ↑↑5枚目の写真とテキスト項目↑↑ %>
 
-      
       <%# ↓↓コメント一覧↓↓ %>
       <div class="prototype__comments">
+        <%# 投稿に紐づくコメントを一覧する処理の記述 %>
+        <ul class="comments_lists">
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.text %>
+              <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
+            </li>
+          <% end %>
+        </ul>
+        <%# // 投稿に紐づくコメントを一覧する処理の記述 %>
+
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
           <%= form_with model: [@tweet, @comment], local: true do |f| %>
@@ -108,17 +117,6 @@
           <% end %>
         <% end %>
         <%# // ログインしているユーザーには上記を表示する %>
-        
-        <%# 投稿に紐づくコメントを一覧する処理の記述 %>
-        <ul class="comments_lists">
-          <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.text %>
-              <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
-            </li>
-          <% end %>
-        </ul>
-        <%# // 投稿に紐づくコメントを一覧する処理の記述 %>
       </div>
       <%# ↑↑コメント一覧↑↑ %>
     </div>

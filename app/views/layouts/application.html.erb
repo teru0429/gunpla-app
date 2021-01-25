@@ -32,12 +32,41 @@
           <% end %>
         </ul>
       </div>
-      <%# <div class='nav'>
-      </div> %>
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <div class='footer-contents'>
+        <div class='furima-details'>
+          <ul>
+            <li><a href="#" class='list-footer'>GCCとは</a></li>
+            <li><a href="#" class='list-footer'>ヘルプセンター</a></li>
+            <li><a href="#" class='list-footer'>改善目安箱</a></li>
+          </ul>
+        </div>
+        <div class='furima-details'>
+          <ul>
+            <li><a href="#" class='list-footer'>開催中のイベント</a></li>
+            <li><a href="#" class='list-footer'>グレード別作品一覧</a></li>
+            <li><a href="#" class='list-footer'>お知らせ</a></li>
+          </ul>
+        </div>
+        <div class='furima-details'>
+          <ul>
+            <li><a href="#" class='list-footer'>Twitter</a></li>
+            <li><a href="#" class='list-footer'>YouTube</a></li>
+            <li><a href="#" class='list-footer'>Instagram</a></li>
+          </ul>
+        </div>
+        <div class='furima-details'>
+          <ul>
+            <li><a href="#" class='list-footer'>ご利用規約</a></li>
+            <li><a href="#" class='list-footer'>プライバシーポリシー</a></li>
+            <li><a href="#" class='list-footer'>よい投稿をするために</a></li>
+          </ul>
+        </div>
+      </div>
+      <%= link_to image_tag("logo3.png", class:"logo-icon2"), "/" %>
+      <p class="copyright">Copyright © GCC All rights reserved.</p>
     </footer>
   </body>
 </html>
