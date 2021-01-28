@@ -9,8 +9,8 @@ class User < ApplicationRecord
   # ↑↑投稿に関するassociation↑↑
   
   # ↓↓チャットに関するassociation↓↓
-  has_many :user_rooms
-  has_many :rooms, through: :user_rooms
+  has_many :room_users, dependent: :destroy
+  has_many :chats, dependent: :destroy
   # ↑↑チャットに関するassociation↑↑
 
   validates :nickname,       presence: true

@@ -14,13 +14,41 @@
           </tr>
         </tbody>
       </table>
+
+      <% if @user.id == current_user.id %>
+      <% else %>
+        <% if @isRoom == true %>
+          <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, :value=> @user.id %>
+            <% end %>
+            <%= f.submit "チャットを始める" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんの投稿一覧"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%# 部分テンプレートでそのユーザーが投稿した一覧を表示する %>
         <%= render partial: 'tweets/tweet', collection: @tweets %>
       </div>
     </div>
   </div>
 </div>
+
+<%# <% unless @user.id == current_user.id %>
+  <%# <% if @isRoom == true %>
+    <%# <p class="user-show-room"><a href="/rooms/<%= @roomId %>
+  <%# <% else %> 
+    <%# <%= form_for @room do |f| %> 
+      <%# <%= fields_for @entry do |e| %> 
+        <%# <%= e.hidden_field :user_id, value: @user.id %> 
+      <%# <% end %> 
+      <%# <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%> 
+    <%# <% end %> 
+  <%# <% end %> 
+<%# <% end %> 
