@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   resources :users, only: [:index, :show]
-
-  resources :chats, only: [:create] do
-    resources :rooms, only: [:create, :show]
+  
+  resources :rooms, only: [:create, :show] do
+    resources :chats, only: [:create] 
   end
 end
