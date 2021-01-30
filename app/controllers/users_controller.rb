@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user=User.find(params[:id])
+    @rooms = @user.rooms
     @tweets = @user.tweets
     @currentUserEntry=RoomUser.where(user_id: current_user.id)
     @userEntry=RoomUser.where(user_id: @user.id)
@@ -28,8 +29,3 @@ class UsersController < ApplicationController
     end
   end
 end
-
-  # def show
-  #   @user = User.find(params[:id])
-  #   @tweets = @user.tweets
-  # end

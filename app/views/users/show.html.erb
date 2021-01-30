@@ -16,9 +16,14 @@
       </table>
 
       <% if @user.id == current_user.id %>
+        <% @rooms.each do |room| %>
+          <%= link_to room_path(room.id) do %>
+              <i class="far fa-envelope"></i>
+            <% end %>
+        <% end %>
       <% else %>
         <% if @isRoom == true %>
-          <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+          <p><a href= "/rooms/<%= @roomId %>" >チャットへ</a></p>
         <% else %>
           <%= form_with model: @room, local: true do |f| %>
             <%= f.text_field :name %>
@@ -31,7 +36,7 @@
           <% end %>
         <% end %>
       <% end %>
-      
+
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんの投稿一覧"%>
       </h2>
