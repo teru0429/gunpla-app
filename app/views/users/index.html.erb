@@ -1,0 +1,8 @@
+<h1>DMサンプルアプリ</h1>
+<% if user_signed_in? %>
+  <h2>Hello <%= current_user.nickname %></h2>
+  <% @users.each do |u| %>
+  <p><a href="/users/<%= u.id %>"><%= u.nickname %>さん</a></p>
+  <hr>
+  <% end %>
+<% end %>

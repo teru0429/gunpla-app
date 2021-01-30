@@ -1,13 +1,13 @@
-<div class="card">
-  <div class="messages">
+<ul class="tweet-lists">
+  <li class='list'>
     <% if tweet.images.count > 0 %>
       <%= link_to tweet_path(tweet.id) do %>
         <%= image_tag tweet.images.first, class: :card__img %>
       <% end %>
     <% end %>
-  </div>
+  </li>
   <div class="card__body">
     <%= link_to tweet.title, tweet_path(tweet.id), class: :card__title %>
     <%= link_to "作成者#{tweet.user.nickname}", user_path(tweet.user.id), class: :card__user %>
   </div>
-</div>
+</ul>
