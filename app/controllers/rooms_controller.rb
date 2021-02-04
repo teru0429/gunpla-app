@@ -2,14 +2,16 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
   
   def create
-    @room = Room.create(room_params)
-    @entry1 = RoomUser.create(:room_id => @room.id, :user_id => current_user.id)
-    @entry2 = RoomUser.create(:room_id => @room.id, user_id: params[:user_id])
-    redirect_to "/rooms/#{@room.id}"
+    @room = Room.create
+    # binding.pry
+    @entry1 = RoomUser.create(:room_id => @room.id, :user_id => current_user.id, name: room_users_params[:name])
+    @entry2 = RoomUser.create(room_users_params)
+    redirect_to room_path(@room)
   end
 
   def show
     @room = Room.find(params[:id])
+    @room_users = RoomUser.find_by(room_id: @room.id, user_id: current_user.id)
     if RoomUser.where(:user_id => current_user.id, :room_id => @room.id).present?
       @messages = @room.chats
       @message = Chat.new
@@ -20,7 +22,8 @@ class RoomsController < ApplicationController
   end
 
   private
-  def room_params
-    params.require(:room).permit(:name)
+  def room_users_params
+    params.require(:room_user).permit(:user_id, :room_id, :name).merge(room_id: @room.id)
+    
   end
 end

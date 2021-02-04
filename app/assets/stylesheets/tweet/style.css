@@ -57,8 +57,9 @@ a {
 
 .tweet-lists {
   width: 40vw;
-  display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
+
 }
 
 .tweet-lists>.list {
@@ -72,8 +73,9 @@ a {
 }
 
 .card__body{
-  margin-left: 2vw;
+  margin: 0 2vw;
 }
+
 .card__title {
   display: block;
   font-size: 20px;
