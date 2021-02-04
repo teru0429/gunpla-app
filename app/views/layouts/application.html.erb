@@ -15,11 +15,9 @@
     <header class='top-page-header'>
       <div class='search-bar-contents'>
         <%= link_to image_tag("logo3.png", class:"logo-icon"), "/" %>
-        <form class="search-form" action="#">
-          <input class='input-box' placeholder='作品を探す'>
-          <button class="search-button">
-            <%= image_tag "search.png", class:"search-icon" %>
-          </button>
+        <form method="get" action="#" class="search_container">
+          <input type="text" size="25" placeholder="作品を探す">
+          <input type="submit" value="&#xf002;">
         </form>
         <ul class='lists-right'>
           <% if user_signed_in? %>
@@ -65,7 +63,7 @@
           </ul>
         </div>
       </div>
-      <%= link_to image_tag("logo3.png", class:"logo-icon2"), "/" %>
+      <%= link_to image_tag("logo3.png", class:"logo-icon3"), "/" %>
       <p class="copyright">Copyright © GCC All rights reserved.</p>
     </footer>
   </body>

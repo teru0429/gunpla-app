@@ -16,25 +16,21 @@
       </table>
 
       <% if @user.id == current_user.id %>
-        <% @rooms.each do |room| %>
-          <%= link_to room_path(room.id) do %>
-              <i class="far fa-envelope"></i>
-            <% end %>
-        <% end %>
       <% else %>
-        <% if @isRoom == true %>
-          <p><a href= "/rooms/<%= @roomId %>" >チャットへ</a></p>
+        <% if @isRoom %>
+          <%= link_to "チャットへ", room_path(@roomId)  %>
+          <%# <p><a href= "/rooms/<%= @roomId %>
         <% else %>
-          <%= form_with model: @room, local: true do |f| %>
-            <%= f.text_field :name %>
-            <%= f.fields_for @entry do |e| %>
+          <%= form_for @room, local: true do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.text_field :name %>
               <%= e.hidden_field :user_id, value: @user.id %>
             <% end %>
             <%= f.submit  "チャットを始める" do %>
                 <i class='far fa-envelope'></i>
             <% end %>
           <% end %>
-        <% end %>
+        <% end %> 
       <% end %>
 
       <h2 class="page-heading">

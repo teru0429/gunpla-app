@@ -4,7 +4,7 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 10vw;
+  padding: 2vh 3vw;
   display: flex;
   flex-direction: column;
   background-color: #272727;
@@ -17,48 +17,61 @@
 }
 
 .logo-icon {
-  width: 30vw;
-  /* margin-right: 5vw; */
+  width: 60vw;
+  padding-right: 30px;
   margin: auto;
 }
 
-.search-form {
-  width: 65vw;
-  height: 5vh;
-  display: flex;
-  margin-bottom: 5px;
+.search_container{
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.2em;
+  width: 250px;
+  overflow: hidden;
+  background: #3879D9;
 }
-
-.search-form>.input-box {
-  width: 50%;
-  height: 5vh;
-  padding-left: 10px;
+.search_container input[type="text"]{
+  border: none;
+  height: 2.0em;
+  background: #3879D9;
 }
-
-.search-button {
-  width: 5vh;
-  border: 0;
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
   cursor: pointer;
-  background-color: #1d61b9;
-  padding: 8px;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #fff;
+  position: absolute;
+  height: 2.5em;
+  right: 8px;
+  top: -10px;
+  outline : none;
 }
-
-.search-icon {
-  width: 100%;
+.search_container ::-webkit-input-placeholder {
+  color: #fff;
 }
 
 .lists-left {
-  width: 100vw;
-  padding: 2vh 3vw;
+  width: 100%;
+  padding: 3vh 3vw;
   display: flex;
   background-color: #272727;
+  overflow: scroll;
+  white-space:nowrap;
 }
 
 .border-list {
+  width: 10%;
   text-decoration: none;
   margin-right: 3vw;
   color: white;
-  
 }
 
 
@@ -67,10 +80,11 @@
   font-size: 18px;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  padding: 1vh 0 1vh 4vw;
   display: flex;
   list-style: none;
   justify-content: space-between;
+  white-space:nowrap;
 }
 
 .user-nickname {
@@ -136,7 +150,7 @@
 /* フッター */
 .footer {
   width: 100vw;
-  padding: 5vh 0;
+  padding: 4vh 0;
   color: #FFF;
   background-color: #272727;
   text-align: center;
@@ -157,7 +171,7 @@
   font-size: 15px;
   line-height: 30px;
 }
-.logo-icon2 {
+.logo-icon3 {
   width: 25vw;
   margin: auto;
 }
