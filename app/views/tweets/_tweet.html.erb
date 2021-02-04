@@ -6,6 +6,7 @@
       <% end %>
     <% end %>
   </li>
+  <hr>
   <div class="card__body">
     <%= link_to tweet.title, tweet_path(tweet.id), class: :card__title %>
     <%= link_to "作成者#{tweet.user.nickname}", user_path(tweet.user.id), class: :card__user %>

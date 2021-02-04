@@ -43,7 +43,7 @@
 </div>
 
 <div class="room-submit">
-  <%= form_with model: [@room,@message] do |f| %>
+  <%= form_with model: [@room,@message], local: true do |f| %>
     <div class="form-input">
       <%= f.text_field :message, :placeholder => "メッセージを入力して下さい" , :size => 70, class: "message-content" %>
       <%= f.hidden_field :room_id, :value => @room.id %>
