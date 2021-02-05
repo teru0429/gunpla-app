@@ -6,11 +6,11 @@
   </div>
   <div class="field">
     <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title, placeholder: 'type a message' %>
+    <%= f.text_field :title, placeholder: 'タイトルをつけてください', class: :form__title %>
   </div>
   <div class="field">
     <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text, class: :form__text %>
+    <%= f.text_area :text, placeholder: 'この写真の説明文を入力してください', class: :form__text %>
   </div>
   
   <%# <div class="weight-bold-text">
@@ -21,50 +21,50 @@
   
   <%# ↓↓2枚目の写真とテキスト項目↓↓ %>
   <div class="field">
-    <%= f.label :image, "メイン写真" %><br />
+    <%= f.label :image, "アピールショット" %><br />
     <%= f.file_field :images, name: 'tweet[images][]', direct_upload: true %>
   </div>
   <div class="field">
     <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text1, class: :form__text %>
+    <%= f.text_area :text1, placeholder: 'この写真の説明文を入力してください', class: :form__text %>
   </div>
   <%# ↑↑2枚目の写真とテキスト項目↑↑ %>
 
   <%# ↓↓3枚目の写真とテキスト項目↓↓ %>
   <div class="field">
-    <%= f.label :image, "メイン写真" %><br />
+    <%= f.label :image, "アピールショット" %><br />
     <%= f.file_field :images, name: 'tweet[images][]', direct_upload: true %>
   </div>
   <div class="field">
     <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text2, class: :form__text %>
+    <%= f.text_area :text2, placeholder: 'この写真の説明文を入力してください', class: :form__text %>
   </div>
   <%# ↑↑3枚目の写真とテキスト項目↑↑ %>
 
   <%# ↓↓4枚目の写真とテキスト項目↓↓ %>
   <div class="field">
-    <%= f.label :image, "メイン写真" %><br />
+    <%= f.label :image, "アピールショット" %><br />
     <%= f.file_field :images, name: 'tweet[images][]', direct_upload: true %>
   </div>
   <div class="field">
     <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text3, class: :form__text %>
+    <%= f.text_area :text3, placeholder: 'この写真の説明文を入力してください', class: :form__text %>
   </div>
   <%# ↑↑4枚目の写真とテキスト項目↑↑ %>
 
   <%# ↓↓5枚目の写真とテキスト項目↓↓ %>
   <div class="field">
-    <%= f.label :image, "メイン写真" %><br />
+    <%= f.label :image, "アピールショット" %><br />
     <%= f.file_field :images, name: 'tweet[images][]', direct_upload: true %>
   </div>
   <div class="field">
     <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text4, class: :form__text %>
+    <%= f.text_area :text4, placeholder: 'この写真の説明文を入力してください', class: :form__text %>
   </div>
   <%# ↑↑5枚目の写真とテキスト項目↑↑ %>
 
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "投稿する", class: :form__btn  %>
   </div> 
 <% end %>
 

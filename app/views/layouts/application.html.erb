@@ -5,10 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
-
+  
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 
   <body>
@@ -19,16 +20,20 @@
           <input type="text" size="25" placeholder="作品を探す">
           <input type="submit" value="&#xf002;">
         </form>
-        <ul class='lists-right'>
+        <div class="lists-right">
           <% if user_signed_in? %>
-            <li><%= link_to "新規投稿", new_tweet_path, class: :nav__btn %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
-            <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li> 
+          <div class="nav__right">
+            <%= link_to "新規投稿", new_tweet_path, class: :nav__btn %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: :nav__logout %>
+            <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+          </div>
           <% else %>
-            <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-            <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+            <div class="nav__right">
+              <%= link_to 'ログイン', new_user_session_path, class: :nav__btn %>
+              <%= link_to '新規登録', new_user_registration_path, class: :nav__btn %>
+            </div>
           <% end %>
-        </ul>
+        </div>
       </div>
     </header>
     <%= yield %>
@@ -50,9 +55,9 @@
         </div>
         <div class='furima-details'>
           <ul>
-            <li><a href="#" class='list-footer'>Twitter</a></li>
-            <li><a href="#" class='list-footer'>YouTube</a></li>
-            <li><a href="#" class='list-footer'>Instagram</a></li>
+            <li><a href="#" class='list-footer'><i class="fab fa-twitter"></i>Twitter</a></li>
+            <li><a href="#" class='list-footer'><i class="fab fa-youtube"></i>YouTube</a></li>
+            <li><a href="#" class='list-footer'><i class="fab fa-instagram"></i>Instagram</a></li>
           </ul>
         </div>
         <div class='furima-details'>

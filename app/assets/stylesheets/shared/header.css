@@ -7,6 +7,7 @@
   padding: 2vh 3vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: #272727;
 }
 
@@ -15,13 +16,14 @@
   justify-content: space-between;
   align-items: center;
 }
-
+/* ロゴ部分 */
 .logo-icon {
-  width: 60vw;
+  width: 40vw;
   padding-right: 30px;
   margin: auto;
 }
 
+/* 検索項目 */
 .search_container{
   position: relative;
   box-sizing: border-box;
@@ -58,6 +60,7 @@
   color: #fff;
 }
 
+/* カテゴリー等のヘッダー欄 */
 .lists-left {
   width: 100%;
   padding: 3vh 3vw;
@@ -66,7 +69,6 @@
   overflow: scroll;
   white-space:nowrap;
 }
-
 .border-list {
   width: 10%;
   text-decoration: none;
@@ -74,21 +76,22 @@
   color: white;
 }
 
-
 /* ログイン・新規登録ボタン */
 .lists-right {
+  float: right;
+  margin: 0 0 0 auto;
   font-size: 18px;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0 1vh 4vw;
+  padding: 1vh 0 1vh 7vw;
   display: flex;
   list-style: none;
-  justify-content: space-between;
-  white-space:nowrap;
 }
+
 
 .user-nickname {
   display: inline-block;
+  margin: 0 10px;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
   color: #87CEFA;
@@ -101,6 +104,7 @@
 
 .nav__btn{
   display: inline-block;
+  margin: 0 10px;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
   color: #87CEFA;
@@ -111,8 +115,14 @@
   transition: 0.4s ease;
 }
 
-.logout {
+.nav__btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+.nav__logout {
   display: inline-block;
+  margin: 0 10px;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
   color: red;
@@ -123,28 +133,9 @@
   transition: 0.4s ease;
 }
 
-.login {
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #87CEFA solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-
-.sign-up {
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #87CEFA solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
+.nav__logout:hover{
+  color: #fff;
+  background: red;
 }
 
 /* フッター */

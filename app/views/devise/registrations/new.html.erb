@@ -1,4 +1,4 @@
-<h2>新規会員登録</h2>
+<div class="registration-title"><h2>新規会員登録</h2></div>
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
   <div class="form-group">
@@ -6,14 +6,14 @@
       <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) Ganpla太郎", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・スマホどちらでも可", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -35,5 +35,3 @@
 <% end %>
 
 <%= render "shared/second-footer"%>
-
-

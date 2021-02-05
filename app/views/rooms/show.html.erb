@@ -26,13 +26,13 @@
         <div class="balloon6">
           <div class="chatting">
             <!-- メッセージを左側に表示する -->
-              <div class="says">
-                <p><%= m.message %></p>
-              </div>
-              <!-- 自分以外用の吹き出しCSSクラスを適用する -->
-              <div class="other-user-says-nickname">
-                <p><a href="/users/<%= m.user_id %>"><%= m.user.nickname %></a></p>
-              </div>
+            <div class="says">
+              <p><%= m.message %></p>
+            </div>
+            <!-- 自分以外用の吹き出しCSSクラスを適用する -->
+            <div class="other-user-says-nickname">
+              <p><a href="/users/<%= m.user_id %>"><%= m.user.nickname %></a></p>
+            </div>
           </div>
         </div>
       <% end %>

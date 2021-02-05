@@ -45,9 +45,11 @@ a {
   text-decoration: underline;
 }
 
-.page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
+.page-heading1 {
+  width: 100vh;
+  display: flex;
+  justify-content: center;
+  color: black;
 }
 
 .card__wrapper {

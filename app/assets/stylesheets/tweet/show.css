@@ -1,9 +1,10 @@
 /* 詳細ページ */
-.tweet__wrapper{
+.tweet__wrapper1 {
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.prototype__hedding {
   font-size: 24px;
+  padding: 15px;
   font-weight: bold;
   text-align: center;
   color: #fff;
@@ -60,8 +61,9 @@
   margin-left: 20px;
 }
 
+/* コメント欄 */
 .comments_lists{
-  padding-left: 20px;
+  padding-left: 90px;
 }
 
 .comments_list{
