@@ -1,8 +1,8 @@
 # アプリケーション名
-## GANPLA Create Chat
+### GANPLA Create Chat
 
 # アプリケーションの概要
-## 自身が作ったガンプラを投稿、ユーザー同士でのチャットを楽しむアプリケーション
+### 自身が作ったガンプラを投稿、ユーザー同士でのチャットを楽しむアプリケーション
 
 ## :globe_with_meridians: AppのURL
  https://gunpla-app-33042.herokuapp.com/
