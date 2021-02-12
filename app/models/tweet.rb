@@ -5,6 +5,9 @@ class Tweet < ApplicationRecord
   has_many_attached :images
 
   # ↓↓バリデーション↓↓
-  validates :title, presence: true
-  validates :text,  presence: true
+  with_options presence: true do
+    validates :title
+    validates :text
+    validates :images
+  end
 end
