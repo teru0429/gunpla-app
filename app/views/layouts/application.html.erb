@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GunplaApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,18 +16,20 @@
   <body>
     <header class='top-page-header'>
       <div class='search-bar-contents'>
-        <%= link_to image_tag("logo3.png", class:"logo-icon"), "/" %>
-        <form method="get" action="#" class="search_container">
-          <input type="text" size="25" placeholder="作品を探す">
-          <input type="submit" value="&#xf002;">
-        </form>
-        <div class="lists-right">
+        <div class="list-left">
+          <%= link_to image_tag("logo3.png", class:"logo-icon"), "/" %>
+          <form method="get" action="#" class="search_container">
+            <input type="text" size="25" placeholder="作品を探す">
+            <input type="submit" value="&#xf002;">
+          </form>
+        </div>
+        <div class="list-right">
           <% if user_signed_in? %>
-          <div class="nav__right">
-            <%= link_to "新規投稿", new_tweet_path, class: :nav__btn %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: :nav__logout %>
-            <%= link_to current_user.nickname, "#", class: "user-nickname" %>
-          </div>
+            <div class="nav__right">
+              <%= link_to "新規投稿", new_tweet_path, class: :nav__btn %>
+              <%# <%= link_to current_user.nickname, "#", class: :nav__btn %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: :nav__logout %>
+            </div>
           <% else %>
             <div class="nav__right">
               <%= link_to 'ログイン', new_user_session_path, class: :nav__btn %>
