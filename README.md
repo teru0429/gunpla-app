@@ -3,7 +3,9 @@
 
 # アプリケーションの概要
 ### 自身が作ったガンプラを投稿、ユーザー同士でのチャットを楽しむアプリケーション
-![gunpla](https://gyazo.com/902b97aaf89186a776da67b4c02869f8)
+<p align="center">
+  <img src="https://gyazo.com/902b97aaf89186a776da67b4c02869f8" width=70%>  
+</p>　
 ## :globe_with_meridians: AppのURL
  https://gunpla-app-33042.herokuapp.com/
 
