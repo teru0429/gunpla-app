@@ -4,13 +4,17 @@
 # アプリケーションの概要
 ### 自身が作ったガンプラを投稿、ユーザー同士でのチャットを楽しむアプリケーション
 ![image](https://user-images.githubusercontent.com/75606622/108032113-4ec5c300-7075-11eb-8174-fdd1f7cf184f.png)
+
 ## :globe_with_meridians: AppのURL
  https://gunpla-app-33042.herokuapp.com/
 ※S3未実装のため画像が24時間以内に削除されます※
-## テスト用のアカウント
 
+## テスト用のアカウント
+* ニックネーム:ヒロト メールアドレス:gundam@bd.com パスワード:123asd
+* ニックネーム:リク   メールアドレス:gundam@bf.com パスワード:123asd
 
 ## 工夫した点
+オリジナルアプリの作る上で、次の２つを工夫
 
 
 
@@ -33,11 +37,19 @@
 [![Image from Gyazo](https://i.gyazo.com/93d8c418816e9e96faf49d381ef1d68c.gif)](https://gyazo.com/93d8c418816e9e96faf49d381ef1d68c)
 
 チャット機能を実装したのは人との輪を広げようと思ったからです。TwitterやInstagramなどのSNSがあるが、不特定多数のユーザーが多いので、SNSになれないユーザーのために少しでもなれて欲しいという思いで作りました。
-
+### チャットルーム作成
+[![Image from Gyazo](https://i.gyazo.com/d721316417583fdb1f9059761f628616.gif)](https://gyazo.com/d721316417583fdb1f9059761f628616)
+### メッセージ送信
+[![Image from Gyazo](https://i.gyazo.com/b4c3e028d8276390fd70970cc8a57463.gif)](https://gyazo.com/b4c3e028d8276390fd70970cc8a57463)
+### チャットルーム(相手側)
+[![Image from Gyazo](https://i.gyazo.com/68b2b80e1a1295f2c6ebd6b565ad8194.gif)](https://gyazo.com/68b2b80e1a1295f2c6ebd6b565ad8194)
 
 ## 実装予定の機能
-フォロー、フォロワー機能
-いいね機能、いいねの数順に一覧を表示する機能
+* フォロー、フォロワー機能
+* いいね機能、いいねの数順に一覧を表示する機能
+* 検索機能
+* カテゴリ機能
+* SNSアカウント連携機能
 
 ## データベース設計
 
